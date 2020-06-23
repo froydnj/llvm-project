@@ -11,7 +11,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-// The format of this database matches clang/Basic/Builtins.def.
+// Type and attribute strings are as defined in Builtins.td.
 
 #if defined(BUILTIN) && !defined(LANGBUILTIN)
 #   define LANGBUILTIN(ID, TYPE, ATTRS, BUILTIN_LANG) BUILTIN(ID, TYPE, ATTRS)

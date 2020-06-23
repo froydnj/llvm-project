@@ -44,9 +44,9 @@ enum LanguageID {
 
 namespace Builtin {
 enum ID {
-  NotBuiltin  = 0,      // This is not a builtin function.
+  NotBuiltin = 0, // This is not a builtin function.
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/Builtins.def"
+#include "clang/Basic/Builtins.inc"
   FirstTSBuiltin
 };
 

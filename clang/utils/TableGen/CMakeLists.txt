@@ -8,6 +8,7 @@ add_tablegen(clang-tblgen CLANG
   ClangCommentCommandInfoEmitter.cpp
   ClangCommentHTMLNamedCharacterReferenceEmitter.cpp
   ClangCommentHTMLTagsEmitter.cpp
+  ClangBuiltinsEmitter.cpp
   ClangDataCollectorsEmitter.cpp
   ClangDiagnosticsEmitter.cpp
   ClangOpcodesEmitter.cpp

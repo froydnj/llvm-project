@@ -41,6 +41,11 @@ clang_tablegen(AttrHasAttributeImpl.inc -gen-clang-attr-has-attribute-impl
   TARGET ClangAttrHasAttributeImpl
   )
 
+clang_tablegen(Builtins.inc -gen-clang-builtins-inc
+  SOURCE Builtins.td
+  TARGET ClangBuiltins
+  )
+
 # ARM NEON and MVE
 clang_tablegen(arm_neon.inc -gen-arm-neon-sema
   SOURCE arm_neon.td

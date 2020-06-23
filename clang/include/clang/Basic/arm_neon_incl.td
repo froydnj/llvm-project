@@ -293,7 +293,6 @@ class Inst <string n, string p, string t, Operation o> {
 }
 
 // The following instruction classes are implemented via builtins.
-// These declarations are used to generate Builtins.def:
 //
 // SInst: Instruction with signed/unsigned suffix (e.g., "s8", "u8", "p8")
 // IInst: Instruction with generic integer suffix (e.g., "i8")

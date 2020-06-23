@@ -123,6 +123,8 @@ void EmitClangDataCollectors(llvm::RecordKeeper &Records,
 void EmitTestPragmaAttributeSupportedAttributes(llvm::RecordKeeper &Records,
                                                 llvm::raw_ostream &OS);
 
+void EmitClangBuiltins(llvm::RecordKeeper &Records, llvm::raw_ostream &OS);
+
 } // end namespace clang
 
 #endif

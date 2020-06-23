@@ -6036,7 +6036,7 @@ public:
   enum AtomicOp {
 #define BUILTIN(ID, TYPE, ATTRS)
 #define ATOMIC_BUILTIN(ID, TYPE, ATTRS) AO ## ID,
-#include "clang/Basic/Builtins.def"
+#include "clang/Basic/Builtins.inc"
     // Avoid trailing comma
     BI_First = 0
   };

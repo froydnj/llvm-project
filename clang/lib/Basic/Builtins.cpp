@@ -18,14 +18,15 @@
 using namespace clang;
 
 static const Builtin::Info BuiltinInfo[] = {
-  { "not a builtin function", nullptr, nullptr, nullptr, ALL_LANGUAGES,nullptr},
+    {"not a builtin function", nullptr, nullptr, nullptr, ALL_LANGUAGES,
+     nullptr},
 #define BUILTIN(ID, TYPE, ATTRS)                                               \
   { #ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr },
 #define LANGBUILTIN(ID, TYPE, ATTRS, LANGS)                                    \
   { #ID, TYPE, ATTRS, nullptr, LANGS, nullptr },
 #define LIBBUILTIN(ID, TYPE, ATTRS, HEADER, LANGS)                             \
   { #ID, TYPE, ATTRS, HEADER, LANGS, nullptr },
-#include "clang/Basic/Builtins.def"
+#include "clang/Basic/Builtins.inc"
 };
 
 const Builtin::Info &Builtin::Context::getRecord(unsigned ID) const {

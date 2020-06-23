@@ -1718,7 +1718,7 @@ Sema::CheckBuiltinFunctionCall(FunctionDecl *FDecl, unsigned BuiltinID,
 #define ATOMIC_BUILTIN(ID, TYPE, ATTRS) \
   case Builtin::BI##ID: \
     return SemaAtomicOpsOverloaded(TheCallResult, AtomicExpr::AO##ID);
-#include "clang/Basic/Builtins.def"
+#include "clang/Basic/Builtins.inc"
   case Builtin::BI__annotation:
     if (SemaBuiltinMSVCAnnotation(*this, TheCall))
       return ExprError();

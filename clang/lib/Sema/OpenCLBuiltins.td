@@ -1238,23 +1238,23 @@ let MinVersion = CL20 in {
 //--------------------------------------------------------------------
 // OpenCL2.0 : 6.13.16 : Pipe Functions
 // --- Table 27 ---
-// Defined in Builtins.def
+// Defined in Builtins.td
 
 // --- Table 28 ---
 // Builtins taking pipe arguments are defined in Builtins.def
 def : Builtin<"is_valid_reserve_id", [Bool, ReserveId]>;
 
 // --- Table 29 ---
-// Defined in Builtins.def
+// Defined in Builtins.td
 
 
 //--------------------------------------------------------------------
 // OpenCL2.0 : 6.13.17 : Enqueuing Kernels
 // --- Table 30 ---
-// Defined in Builtins.def
+// Defined in Builtins.td
 
 // --- Table 32 ---
-// Defined in Builtins.def
+// Defined in Builtins.td
 
 // --- Table 33 ---
 def : Builtin<"enqueue_marker",

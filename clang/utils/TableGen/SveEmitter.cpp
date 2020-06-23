@@ -113,7 +113,7 @@ public:
   }
 
   /// Return the string representation of a type, which is an encoded
-  /// string for passing to the BUILTIN() macro in Builtins.def.
+  /// string as described in Builtins.td.
   std::string builtin_str() const;
 
   /// Return the C/C++ string representation of a type for use in the
@@ -194,7 +194,7 @@ public:
 
   ArrayRef<ImmCheck> getImmChecks() const { return ImmChecks; }
 
-  /// Return the type string for a BUILTIN() macro in Builtins.def.
+  /// Return the type string as specified in Builtins.td.
   std::string getBuiltinTypeStr();
 
   /// Return the name, mangled with type information. The name is mangled for

@@ -261,8 +261,7 @@ public:
   /// defined in stdint.h or arm_neon.h.
   std::string str() const;
 
-  /// Return the string representation of a type, which is an encoded
-  /// string for passing to the BUILTIN() macro in Builtins.def.
+  /// Return the string representation of a type as specified in Builtins.td.
   std::string builtin_str() const;
 
   /// Return the value in NeonTypeFlags for this type.
@@ -478,7 +477,7 @@ public:
   std::string getMangledName(bool ForceClassS = false) const;
   /// Return the type code for a builtin function call.
   std::string getInstTypeCode(Type T, ClassKind CK) const;
-  /// Return the type string for a BUILTIN() macro in Builtins.def.
+  /// Return the type string as specified in Builtins.td.
   std::string getBuiltinTypeStr();
 
   /// Generate the intrinsic, returning code.

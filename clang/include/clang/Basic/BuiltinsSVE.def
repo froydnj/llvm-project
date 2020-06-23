@@ -11,7 +11,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-// The format of this database matches clang/Basic/Builtins.def.
+// Type and attribute strings are as defined in Builtins.td.
 
 #define GET_SVE_BUILTINS
 #include "clang/Basic/arm_sve_builtins.inc"

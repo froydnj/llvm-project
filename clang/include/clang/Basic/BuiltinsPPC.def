@@ -14,7 +14,7 @@
 // FIXME: this needs to be the full list supported by GCC.  Right now, I'm just
 // adding stuff on demand.
 
-// The format of this database matches clang/Basic/Builtins.def.
+// Type and attribute strings are as defined in Builtins.td.
 
 BUILTIN(__builtin_ppc_get_timebase, "ULLi", "n")
 

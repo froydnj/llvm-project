@@ -44,6 +44,7 @@ enum ActionType {
   GenClangAttrNodeTraverse,
   GenClangBasicReader,
   GenClangBasicWriter,
+  GenClangBuiltins,
   GenClangDiagsDefs,
   GenClangDiagGroups,
   GenClangDiagsIndexName,
@@ -150,6 +151,8 @@ cl::opt<ActionType> Action(
                    "Generate Clang BasicReader classes"),
         clEnumValN(GenClangBasicWriter, "gen-clang-basic-writer",
                    "Generate Clang BasicWriter classes"),
+        clEnumValN(GenClangBuiltins, "gen-clang-builtins-inc",
+                   "Generate Clang Builtins"),
         clEnumValN(GenClangCommentNodes, "gen-clang-comment-nodes",
                    "Generate Clang AST comment nodes"),
         clEnumValN(GenClangDeclNodes, "gen-clang-decl-nodes",
@@ -331,6 +334,9 @@ bool ClangTableGenMain(raw_ostream &OS, RecordKeeper &Records) {
     break;
   case GenClangBasicWriter:
     EmitClangBasicWriter(Records, OS);
+    break;
+  case GenClangBuiltins:
+    EmitClangBuiltins(Records, OS);
     break;
   case GenClangOpcodes:
     EmitClangOpcodes(Records, OS);

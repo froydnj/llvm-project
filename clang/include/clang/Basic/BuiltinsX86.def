@@ -11,7 +11,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-// The format of this database matches clang/Basic/Builtins.def.
+// Type and attribute strings are as defined in Builtins.td.
 
 // FIXME: Ideally we would be able to pull this information from what
 // LLVM already knows about X86 builtins. We need to match the LLVM
