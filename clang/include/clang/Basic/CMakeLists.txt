@@ -46,6 +46,31 @@ clang_tablegen(Builtins.inc -gen-clang-builtins-inc -clang-builtin-arch=generic-
   TARGET ClangBuiltins
   )
 
+macro(clang_builtins_gen arch)
+  clang_tablegen(Builtins${arch}.inc
+    -gen-clang-builtins-inc -clang-builtin-arch=${arch}
+    SOURCE Builtins${arch}.td
+    TARGET ClangBuiltins${arch})
+endmacro(clang_builtins_gen)
+
+clang_builtins_gen(AArch64)
+clang_builtins_gen(AMDGPU)
+clang_builtins_gen(ARM)
+clang_builtins_gen(BPF)
+clang_builtins_gen(Hexagon)
+clang_builtins_gen(HexagonDep)
+clang_builtins_gen(Le64)
+clang_builtins_gen(Mips)
+clang_builtins_gen(NEON)
+clang_builtins_gen(NVPTX)
+clang_builtins_gen(PPC)
+clang_builtins_gen(SVE)
+clang_builtins_gen(SystemZ)
+clang_builtins_gen(WebAssembly)
+clang_builtins_gen(X86_64)
+clang_builtins_gen(X86)
+clang_builtins_gen(XCore)
+
 # ARM NEON and MVE
 clang_tablegen(arm_neon.inc -gen-arm-neon-sema
   SOURCE arm_neon.td
