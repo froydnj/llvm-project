@@ -27,7 +27,7 @@ namespace clang {
   enum {
     LastTIBuiltin = clang::Builtin::FirstTSBuiltin - 1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsNEON.inc"
+#include "clang/Basic/BuiltinsNEON.def"
     FirstTSBuiltin
   };
   }
@@ -38,7 +38,7 @@ namespace clang {
       LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
       LastNEONBuiltin = NEON::FirstTSBuiltin - 1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsARM.inc"
+#include "clang/Basic/BuiltinsARM.def"
       LastTSBuiltin
     };
   }
@@ -47,7 +47,7 @@ namespace clang {
   enum {
     LastNEONBuiltin = NEON::FirstTSBuiltin - 1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsSVE.inc"
+#include "clang/Basic/BuiltinsSVE.def"
     FirstTSBuiltin,
   };
   }
@@ -257,7 +257,7 @@ namespace clang {
     enum {
         LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsHexagon.inc"
+#include "clang/Basic/BuiltinsHexagon.def"
         LastTSBuiltin
     };
   }

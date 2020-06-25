@@ -159,7 +159,7 @@ const Builtin::Info HexagonTargetInfo::BuiltinInfo[] = {
   {#ID, TYPE, ATTRS, HEADER, ALL_LANGUAGES, nullptr},
 #define TARGET_BUILTIN(ID, TYPE, ATTRS, FEATURE)                               \
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, FEATURE},
-#include "clang/Basic/BuiltinsHexagon.inc"
+#include "clang/Basic/BuiltinsHexagon.def"
 };
 
 bool HexagonTargetInfo::hasFeature(StringRef Feature) const {

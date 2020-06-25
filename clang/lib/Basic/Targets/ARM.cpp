@@ -867,7 +867,7 @@ const Builtin::Info ARMTargetInfo::BuiltinInfo[] = {
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
 #define LIBBUILTIN(ID, TYPE, ATTRS, HEADER)                                    \
   {#ID, TYPE, ATTRS, HEADER, ALL_LANGUAGES, nullptr},
-#include "clang/Basic/BuiltinsNEON.inc"
+#include "clang/Basic/BuiltinsNEON.def"
 
 #define BUILTIN(ID, TYPE, ATTRS)                                               \
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
@@ -877,7 +877,7 @@ const Builtin::Info ARMTargetInfo::BuiltinInfo[] = {
   {#ID, TYPE, ATTRS, HEADER, ALL_LANGUAGES, nullptr},
 #define TARGET_HEADER_BUILTIN(ID, TYPE, ATTRS, HEADER, LANGS, FEATURE)         \
   {#ID, TYPE, ATTRS, HEADER, LANGS, FEATURE},
-#include "clang/Basic/BuiltinsARM.inc"
+#include "clang/Basic/BuiltinsARM.def"
 };
 
 ArrayRef<Builtin::Info> ARMTargetInfo::getTargetBuiltins() const {
