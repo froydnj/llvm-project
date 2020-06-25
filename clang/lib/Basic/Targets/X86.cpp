@@ -29,7 +29,7 @@ const Builtin::Info BuiltinInfoX86[] = {
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, FEATURE},
 #define TARGET_HEADER_BUILTIN(ID, TYPE, ATTRS, HEADER, LANGS, FEATURE)         \
   {#ID, TYPE, ATTRS, HEADER, LANGS, FEATURE},
-#include "clang/Basic/BuiltinsX86.def"
+#include "clang/Basic/BuiltinsX86.inc"
 
 #define BUILTIN(ID, TYPE, ATTRS)                                               \
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
@@ -37,7 +37,7 @@ const Builtin::Info BuiltinInfoX86[] = {
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, FEATURE},
 #define TARGET_HEADER_BUILTIN(ID, TYPE, ATTRS, HEADER, LANGS, FEATURE)         \
   {#ID, TYPE, ATTRS, HEADER, LANGS, FEATURE},
-#include "clang/Basic/BuiltinsX86_64.def"
+#include "clang/Basic/BuiltinsX86_64.inc"
 };
 
 static const char *const GCCRegNames[] = {

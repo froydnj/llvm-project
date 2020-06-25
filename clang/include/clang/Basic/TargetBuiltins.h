@@ -27,7 +27,7 @@ namespace clang {
   enum {
     LastTIBuiltin = clang::Builtin::FirstTSBuiltin - 1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsNEON.def"
+#include "clang/Basic/BuiltinsNEON.inc"
     FirstTSBuiltin
   };
   }
@@ -38,7 +38,7 @@ namespace clang {
       LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
       LastNEONBuiltin = NEON::FirstTSBuiltin - 1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsARM.def"
+#include "clang/Basic/BuiltinsARM.inc"
       LastTSBuiltin
     };
   }
@@ -47,7 +47,7 @@ namespace clang {
   enum {
     LastNEONBuiltin = NEON::FirstTSBuiltin - 1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsSVE.def"
+#include "clang/Basic/BuiltinsSVE.inc"
     FirstTSBuiltin,
   };
   }
@@ -60,7 +60,7 @@ namespace clang {
     FirstSVEBuiltin = NEON::FirstTSBuiltin,
     LastSVEBuiltin = SVE::FirstTSBuiltin - 1,
   #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-  #include "clang/Basic/BuiltinsAArch64.def"
+  #include "clang/Basic/BuiltinsAArch64.inc"
     LastTSBuiltin
   };
   }
@@ -70,7 +70,7 @@ namespace clang {
   enum {
     LastTIBuiltin = clang::Builtin::FirstTSBuiltin - 1,
   #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-  #include "clang/Basic/BuiltinsBPF.def"
+  #include "clang/Basic/BuiltinsBPF.inc"
     LastTSBuiltin
   };
   }
@@ -80,7 +80,7 @@ namespace clang {
     enum {
         LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsPPC.def"
+#include "clang/Basic/BuiltinsPPC.inc"
         LastTSBuiltin
     };
   }
@@ -90,7 +90,7 @@ namespace clang {
     enum {
         LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsNVPTX.def"
+#include "clang/Basic/BuiltinsNVPTX.inc"
         LastTSBuiltin
     };
   }
@@ -100,7 +100,7 @@ namespace clang {
   enum {
     LastTIBuiltin = clang::Builtin::FirstTSBuiltin - 1,
   #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-  #include "clang/Basic/BuiltinsAMDGPU.def"
+  #include "clang/Basic/BuiltinsAMDGPU.inc"
     LastTSBuiltin
   };
   }
@@ -110,11 +110,11 @@ namespace clang {
   enum {
     LastTIBuiltin = clang::Builtin::FirstTSBuiltin - 1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsX86.def"
+#include "clang/Basic/BuiltinsX86.inc"
     FirstX86_64Builtin,
     LastX86CommonBuiltin = FirstX86_64Builtin - 1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsX86_64.def"
+#include "clang/Basic/BuiltinsX86_64.inc"
     LastTSBuiltin
   };
   }
@@ -257,7 +257,7 @@ namespace clang {
     enum {
         LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsHexagon.def"
+#include "clang/Basic/BuiltinsHexagon.inc"
         LastTSBuiltin
     };
   }
@@ -267,7 +267,7 @@ namespace clang {
     enum {
         LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsMips.def"
+#include "clang/Basic/BuiltinsMips.inc"
         LastTSBuiltin
     };
   }
@@ -277,7 +277,7 @@ namespace clang {
     enum {
         LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsXCore.def"
+#include "clang/Basic/BuiltinsXCore.inc"
         LastTSBuiltin
     };
   }
@@ -287,7 +287,7 @@ namespace clang {
   enum {
     LastTIBuiltin = clang::Builtin::FirstTSBuiltin - 1,
   #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-  #include "clang/Basic/BuiltinsLe64.def"
+  #include "clang/Basic/BuiltinsLe64.inc"
     LastTSBuiltin
   };
   }
@@ -297,7 +297,7 @@ namespace clang {
     enum {
         LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsSystemZ.def"
+#include "clang/Basic/BuiltinsSystemZ.inc"
         LastTSBuiltin
     };
   }
@@ -307,7 +307,7 @@ namespace clang {
     enum {
       LastTIBuiltin = clang::Builtin::FirstTSBuiltin-1,
 #define BUILTIN(ID, TYPE, ATTRS) BI##ID,
-#include "clang/Basic/BuiltinsWebAssembly.def"
+#include "clang/Basic/BuiltinsWebAssembly.inc"
       LastTSBuiltin
     };
   }

@@ -25,11 +25,11 @@ using namespace clang::targets;
 const Builtin::Info AArch64TargetInfo::BuiltinInfo[] = {
 #define BUILTIN(ID, TYPE, ATTRS)                                               \
    {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
-#include "clang/Basic/BuiltinsNEON.def"
+#include "clang/Basic/BuiltinsNEON.inc"
 
 #define BUILTIN(ID, TYPE, ATTRS)                                               \
    {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
-#include "clang/Basic/BuiltinsSVE.def"
+#include "clang/Basic/BuiltinsSVE.inc"
 
 #define BUILTIN(ID, TYPE, ATTRS)                                               \
    {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
@@ -37,7 +37,7 @@ const Builtin::Info AArch64TargetInfo::BuiltinInfo[] = {
   {#ID, TYPE, ATTRS, nullptr, LANG, nullptr},
 #define TARGET_HEADER_BUILTIN(ID, TYPE, ATTRS, HEADER, LANGS, FEATURE)         \
   {#ID, TYPE, ATTRS, HEADER, LANGS, FEATURE},
-#include "clang/Basic/BuiltinsAArch64.def"
+#include "clang/Basic/BuiltinsAArch64.inc"
 };
 
 AArch64TargetInfo::AArch64TargetInfo(const llvm::Triple &Triple,

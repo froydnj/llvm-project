@@ -25,7 +25,7 @@ const Builtin::Info MipsTargetInfo::BuiltinInfo[] = {
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
 #define LIBBUILTIN(ID, TYPE, ATTRS, HEADER)                                    \
   {#ID, TYPE, ATTRS, HEADER, ALL_LANGUAGES, nullptr},
-#include "clang/Basic/BuiltinsMips.def"
+#include "clang/Basic/BuiltinsMips.inc"
 };
 
 bool MipsTargetInfo::processorSupportsGPR64() const {

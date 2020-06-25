@@ -23,7 +23,7 @@ const Builtin::Info PPCTargetInfo::BuiltinInfo[] = {
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
 #define LIBBUILTIN(ID, TYPE, ATTRS, HEADER)                                    \
   {#ID, TYPE, ATTRS, HEADER, ALL_LANGUAGES, nullptr},
-#include "clang/Basic/BuiltinsPPC.def"
+#include "clang/Basic/BuiltinsPPC.inc"
 };
 
 /// handleTargetFeatures - Perform initialization based on the user

@@ -25,7 +25,7 @@ const Builtin::Info SystemZTargetInfo::BuiltinInfo[] = {
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
 #define TARGET_BUILTIN(ID, TYPE, ATTRS, FEATURE)                               \
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, FEATURE},
-#include "clang/Basic/BuiltinsSystemZ.def"
+#include "clang/Basic/BuiltinsSystemZ.inc"
 };
 
 const char *const SystemZTargetInfo::GCCRegNames[] = {

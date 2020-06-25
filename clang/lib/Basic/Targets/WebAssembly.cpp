@@ -27,7 +27,7 @@ const Builtin::Info WebAssemblyTargetInfo::BuiltinInfo[] = {
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, FEATURE},
 #define LIBBUILTIN(ID, TYPE, ATTRS, HEADER)                                    \
   {#ID, TYPE, ATTRS, HEADER, ALL_LANGUAGES, nullptr},
-#include "clang/Basic/BuiltinsWebAssembly.def"
+#include "clang/Basic/BuiltinsWebAssembly.inc"
 };
 
 static constexpr llvm::StringLiteral ValidCPUNames[] = {

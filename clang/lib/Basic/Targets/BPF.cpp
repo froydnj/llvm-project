@@ -22,7 +22,7 @@ using namespace clang::targets;
 const Builtin::Info BPFTargetInfo::BuiltinInfo[] = {
 #define BUILTIN(ID, TYPE, ATTRS)                                               \
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
-#include "clang/Basic/BuiltinsBPF.def"
+#include "clang/Basic/BuiltinsBPF.inc"
 };
 
 void BPFTargetInfo::getTargetDefines(const LangOptions &Opts,

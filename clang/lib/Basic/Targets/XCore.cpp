@@ -23,7 +23,7 @@ const Builtin::Info XCoreTargetInfo::BuiltinInfo[] = {
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
 #define LIBBUILTIN(ID, TYPE, ATTRS, HEADER)                                    \
   {#ID, TYPE, ATTRS, HEADER, ALL_LANGUAGES, nullptr},
-#include "clang/Basic/BuiltinsXCore.def"
+#include "clang/Basic/BuiltinsXCore.inc"
 };
 
 void XCoreTargetInfo::getTargetDefines(const LangOptions &Opts,

@@ -77,7 +77,7 @@ const Builtin::Info AMDGPUTargetInfo::BuiltinInfo[] = {
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, nullptr},
 #define TARGET_BUILTIN(ID, TYPE, ATTRS, FEATURE)                               \
   {#ID, TYPE, ATTRS, nullptr, ALL_LANGUAGES, FEATURE},
-#include "clang/Basic/BuiltinsAMDGPU.def"
+#include "clang/Basic/BuiltinsAMDGPU.inc"
 };
 
 const char *const AMDGPUTargetInfo::GCCRegNames[] = {
