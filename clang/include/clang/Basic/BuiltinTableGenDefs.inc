@@ -50,4 +50,12 @@ class LangBuiltin<string type, string attributes, Language langs> :
     BuiltinBase<type, attributes, "", langs, ""> {
 }
 
+class TargetBuiltin<string type, string attributes, string features> :
+    BuiltinBase<type, attributes, "", AllLanguages, features> {
+}
+
+class TargetHeaderBuiltin<string type, string attributes, string headerName, Language langs, string features> :
+    BuiltinBase<type, attributes, headerName, langs, features> {
+}
+
 #endif // BUILTIN_TABLEGEN_DEFS
