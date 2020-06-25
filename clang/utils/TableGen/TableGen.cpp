@@ -241,6 +241,10 @@ cl::opt<std::string>
 ClangComponent("clang-component",
                cl::desc("Only use warnings from specified component"),
                cl::value_desc("component"), cl::Hidden);
+cl::opt<std::string>
+ClangBuiltinArch("clang-builtin-arch",
+                 cl::desc("Only generate builtins for specified arch"),
+                 cl::value_desc("arch"), cl::Hidden);
 
 bool ClangTableGenMain(raw_ostream &OS, RecordKeeper &Records) {
   switch (Action) {
@@ -336,7 +340,7 @@ bool ClangTableGenMain(raw_ostream &OS, RecordKeeper &Records) {
     EmitClangBasicWriter(Records, OS);
     break;
   case GenClangBuiltins:
-    EmitClangBuiltins(Records, OS);
+    EmitClangBuiltins(Records, OS, ClangBuiltinArch);
     break;
   case GenClangOpcodes:
     EmitClangOpcodes(Records, OS);

@@ -11,7 +11,8 @@ using namespace llvm;
 
 namespace clang {
 
-void EmitClangBuiltins(RecordKeeper &Records, raw_ostream &OS) {
+void EmitClangBuiltins(RecordKeeper &Records, raw_ostream &OS,
+                       const std::string &Arch) {
   std::vector<Record *> Builtins = Records.getAllDerivedDefinitions("BuiltinBase");
   // The atomic builtins, particularly, are assumed to be assigned IDs in
   // definition order.
@@ -46,6 +47,11 @@ void EmitClangBuiltins(RecordKeeper &Records, raw_ostream &OS) {
   Record *TargetHeaderBuiltinClass = Records.getClass("TargetHeaderBuiltin");
 
   for (const auto &R : Builtins) {
+    StringRef TargetArch = R->getValueAsString("TargetArch");
+    if (TargetArch != Arch) {
+      continue;
+    }
+
     StringRef Name = R->getName();
     StringRef Type = R->getValueAsString("Type");
     StringRef Attributes = R->getValueAsString("Attributes");

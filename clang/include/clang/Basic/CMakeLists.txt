@@ -41,7 +41,7 @@ clang_tablegen(AttrHasAttributeImpl.inc -gen-clang-attr-has-attribute-impl
   TARGET ClangAttrHasAttributeImpl
   )
 
-clang_tablegen(Builtins.inc -gen-clang-builtins-inc
+clang_tablegen(Builtins.inc -gen-clang-builtins-inc -clang-builtin-arch=generic-clang
   SOURCE Builtins.td
   TARGET ClangBuiltins
   )
