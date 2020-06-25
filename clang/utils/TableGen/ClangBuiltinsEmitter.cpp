@@ -27,6 +27,14 @@ void EmitClangBuiltins(RecordKeeper &Records, raw_ostream &OS) {
         "TYPE, ATTRS)\n"
      << "#endif\n"
      << "\n"
+     << "#if defined(BUILTIN) && !defined(TARGET_BUILTIN)\n"
+     << "#   define TARGET_BUILTIN(ID, TYPE, ATTRS, FEATURE) BUILTIN(ID, TYPE, ATTRS)\n"
+     << "#endif\n"
+     << "\n"
+     << "#if defined(BUILTIN) && !defined(TARGET_HEADER_BUILTIN)\n"
+     << "#  define TARGET_HEADER_BUILTIN(ID, TYPE, ATTRS, HEADER, LANG, FEATURE) BUILTIN(ID, TYPE, ATTRS)\n"
+     << "#endif\n"
+     << "\n"
      << "#ifndef ATOMIC_BUILTIN\n"
      << "#  define ATOMIC_BUILTIN(ID, TYPE, ATTRS) BUILTIN(ID, TYPE, ATTRS)\n"
      << "#endif\n"
@@ -34,12 +42,16 @@ void EmitClangBuiltins(RecordKeeper &Records, raw_ostream &OS) {
 
   Record *LibraryBuiltinClass = Records.getClass("LibraryBuiltin");
   Record *LangBuiltinClass = Records.getClass("LangBuiltin");
+  Record *TargetBuiltinClass = Records.getClass("TargetBuiltin");
+  Record *TargetHeaderBuiltinClass = Records.getClass("TargetHeaderBuiltin");
 
   for (const auto &R : Builtins) {
     StringRef Name = R->getName();
     StringRef Type = R->getValueAsString("Type");
     StringRef Attributes = R->getValueAsString("Attributes");
     StringRef Language = R->getValueAsDef("Lang")->getValueAsString("Name");
+    StringRef Header = R->getValueAsString("Header");
+    StringRef Features = R->getValueAsString("Features");
 
     if (R->getValueAsBit("Atomic")) {
       OS << "ATOMIC_BUILTIN(" << Name << ", \"" << Type << "\", \""
@@ -48,7 +60,6 @@ void EmitClangBuiltins(RecordKeeper &Records, raw_ostream &OS) {
     }
 
     if (R->isSubClassOf(LibraryBuiltinClass)) {
-      StringRef Header = R->getValueAsString("Header");
       OS << "LIBBUILTIN(" << Name << ", \"" << Type << "\", \"" << Attributes
          << "\", \"" << Header << "\", " << Language << ")\n";
       continue;
@@ -60,6 +71,18 @@ void EmitClangBuiltins(RecordKeeper &Records, raw_ostream &OS) {
       continue;
     }
 
+    if (R->isSubClassOf(TargetBuiltinClass)) {
+      OS << "TARGET_BUILTIN(" << Name << ", \"" << Type << "\", \"" << Attributes
+	 << "\", \"" << Features << "\")\n";
+      continue;
+    }
+
+    if (R->isSubClassOf(TargetHeaderBuiltinClass)) {
+      OS << "TARGET_HEADER_BUILTIN(" << Name << ", \"" << Type << "\", \"" << Attributes
+	 << "\", \"" << Header << "\", " << Language << ", \"" << Features << "\")\n";
+      continue;
+    }
+
     OS << "BUILTIN(" << Name << ", \"" << Type << "\", \"" << Attributes
        << "\")\n";
   }
@@ -67,7 +90,9 @@ void EmitClangBuiltins(RecordKeeper &Records, raw_ostream &OS) {
   OS << "#undef BUILTIN\n"
      << "#undef ATOMIC_BUILTIN\n"
      << "#undef LANGBUILTIN\n"
-     << "#undef LIBBUILTIN\n";
+     << "#undef LIBBUILTIN\n"
+     << "#undef TARGET_BUILTIN\n"
+     << "#undef TARGET_HEADER_BUILTIN\n";
 }
 
 } // end namespace clang
