@@ -33,6 +33,7 @@ class BuiltinBase<string type, string attributes, string headerName,
   string Header = headerName;
   Language Lang = langs;
   string Features = features;
+  string TargetArch = "generic-clang";
   // Some of our atomics builtins are handled by AtomicExpr rather than as
   // normal builtin CallExprs.  This bit is used for such builtins.
   bit Atomic = 0;
